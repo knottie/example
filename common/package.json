@@ -1,0 +1,26 @@
+{
+  "name": "common",
+  "version": "0.0.0",
+  "description": "Knottie example common library",
+  "main": "src/index.js",
+  "dependencies": {
+    "lodash": "^2.4.1"
+  },
+  "devDependencies": {
+    "chai": "^1.9.1",
+    "gulp": "^3.8.8",
+    "gulp-istanbul": "^0.3.1",
+    "gulp-jshint": "^1.8.4",
+    "gulp-mocha": "^1.1.0",
+    "gulp-rimraf": "^0.1.0",
+    "gulp-util": "^3.0.1",
+    "jshint": "^2.5.5",
+    "mocha": "^1.21.4",
+    "pretty-hrtime": "^0.2.1"
+  },
+  "scripts": {
+    "test": "gulp test"
+  },
+  "author": "",
+  "license": "MIT"
+}
