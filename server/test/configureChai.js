@@ -1,5 +1,8 @@
-var chai = require('chai'),
-    _ = require('lodash');
+var chai = require('chai');
+var _ = require('lodash');
+var sinonChai = require("sinon-chai");
+
+chai.use(sinonChai);
 
 chai.use(function(chai, utils) {
   var Assertion = chai.Assertion,

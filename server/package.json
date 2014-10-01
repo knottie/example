@@ -4,7 +4,8 @@
   "description": "Knottie example server",
   "main": "src/index.js",
   "dependencies": {
-    "lodash": "^2.4.1"
+    "lodash": "^2.4.1",
+    "restify": "^2.8.2"
   },
   "devDependencies": {
     "chai": "^1.9.1",
@@ -14,7 +15,10 @@
     "gulp-mocha": "^1.1.0",
     "gulp-rimraf": "^0.1.0",
     "gulp-util": "^3.0.1",
-    "pretty-hrtime": "^0.2.1"
+    "pretty-hrtime": "^0.2.1",
+    "sinon": "^1.10.3",
+    "sinon-chai": "^2.5.0",
+    "supertest": "^0.14.0"
   },
   "scripts": {
     "test": "gulp test"
