@@ -1,8 +1,9 @@
-var gulp = require('gulp'),
-    jade = require('gulp-jade');
+var gulp = require('gulp');
+var jade = require('gulp-jade');
 
 gulp.task('buildTemplates', function() {
-  return gulp.src('./src/jade/index.jade')
+  return gulp
+    .src('./src/jade/index.jade')
     .pipe(jade({
       pretty: true
     }))

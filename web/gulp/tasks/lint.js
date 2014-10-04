@@ -1,13 +1,15 @@
-var gulp = require('gulp'),
-    jshint = require('gulp-jshint');
+var gulp = require('gulp');
+var jshint = require('gulp-jshint');
 
-gulp.task('lint', function (cb) {
+gulp.task('lint', function () {
   return gulp
-    .src('src/**/*.js', {read: false})
+    .src([
+      'src/**/*.js',
+      'test/**/*_spec.js'
+    ])
     .pipe(jshint('.jshintrc'))
     .pipe(jshint.reporter('default', {
         verbose: true
     }))
-    //FIXME: This should be failing the build.
     .pipe(jshint.reporter('fail'));
 });

@@ -18,9 +18,11 @@ describe('Hello Routes', function() {
         .expect(200)
         .expect('Content-Type', /json/)
         .expect({hello: 'Bill'})
-        .end(function(err, res){
-          if (err) return done(err);
-          done()
+        .end(function(err, res) {
+          if (err) {
+            return done(err);
+          }
+          done();
         });
     });
 

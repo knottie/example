@@ -1,9 +1,9 @@
-var gulp = require('gulp'),
-    bundleLogger = require('../util/bundleLogger'),
-    handleErrors = require('../util/handleErrors'),
-    source = require('vinyl-source-stream'),
-    browserify = require('browserify'),
-    watchify = require('watchify');
+var gulp = require('gulp');
+var bundleLogger = require('../util/bundleLogger');
+var handleErrors = require('../util/handleErrors');
+var source = require('vinyl-source-stream');
+var browserify = require('browserify');
+var watchify = require('watchify');
 
 gulp.task('buildScripts', function() {
   var isWatching = false;

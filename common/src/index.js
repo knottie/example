@@ -19,7 +19,7 @@ m.ignored = function ignored(foo) {
   }
 
   return false;
-}
+};
 
 // This function is untested.
 m.notCovered = function notCovered(foo) {
@@ -30,6 +30,6 @@ m.notCovered = function notCovered(foo) {
   }
 
   return false;
-}
+};
 
 module.exports = m;

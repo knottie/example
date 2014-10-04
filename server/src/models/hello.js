@@ -12,6 +12,6 @@ m.sayHello = function sayHello(req, res, next) {
 m.getArch = function getArch(req, res, next) {
   res.send(200, os.arch());
   return next();
-}
+};
 
 module.exports = m;
