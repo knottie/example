@@ -1,9 +1,13 @@
 var gulp = require('gulp');
+var uglify = require('gulp-uglify');
+var streamify = require('gulp-streamify');
+var gulpif = require('gulp-if');
 var bundleLogger = require('../util/bundleLogger');
 var handleErrors = require('../util/handleErrors');
 var source = require('vinyl-source-stream');
 var browserify = require('browserify');
 var watchify = require('watchify');
+var argv = require('minimist')(process.argv.slice(2));
 
 gulp.task('buildScripts', function() {
   var isWatching = false;
@@ -14,7 +18,7 @@ gulp.task('buildScripts', function() {
   var bundler = browserify({
     entries: './src/javascript/index.js',
     extensions: [],
-    debug: true,
+    debug: !argv.production,
     cache: {},
     packageCache: {},
     fullPaths: true
@@ -26,6 +30,7 @@ gulp.task('buildScripts', function() {
       .bundle()
       .on('error', handleErrors)
       .pipe(source('index.js'))
+      .pipe(gulpif(argv.production, streamify(uglify())))
       .pipe(gulp.dest('./build/'))
       .on('end', bundleLogger.end);
   };
