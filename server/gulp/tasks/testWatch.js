@@ -11,8 +11,6 @@ gulp.task('testWatch', function() {
       return gulp
         .src('test/**/*_spec.js', {read: false})
         .pipe(mocha({
-          reporter: 'min',
-          ui: 'bdd',
           growl: true
         }))
         .on('error', function() {});
