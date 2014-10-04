@@ -2,6 +2,8 @@
 
 var m = module.exports = {};
 
+m.logger = require('./logger');
+
 // Insert your code here.
 
 // This function is tested.
