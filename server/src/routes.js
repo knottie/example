@@ -10,3 +10,4 @@ var server = require('./server');
 var helloModel = require('./models/hello');
 
 server.get('/hello', helloModel.sayHello);
+server.get('/hello/arch', helloModel.getArch);
