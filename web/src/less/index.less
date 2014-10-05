@@ -1,13 +1,28 @@
 @import "include.less";
 
-body {
-  padding-top: 50px;
+html, body, .container, .row, #menu {
+  height: 100%;
 }
-.starter-template {
-  padding: 40px 15px;
-  text-align: center;
+#docs {
+  height: 100%;
+  overflow: auto;
 }
-
-.nav .fa {
-  padding-right: 5px;
+#menu {
+  padding-top: 10px;
+}
+#menu a {
+  color: #ffffff;
+}
+#menu>ul>li>ul {
+  margin-left: 15px;
+}
+#menu>ul>li>ul>li>ul {
+  margin-left: 30px;
+}
+.pull-down {
+  bottom: 0px;
+  position: absolute;
+}
+#xs-header {
+  padding: 7px;
 }

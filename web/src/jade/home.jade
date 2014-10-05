@@ -1,25 +1,223 @@
 .container
-  .col-xs-12.col-md-4
-    h1 Knottie
-    p.lead
-      | The framework that isn't.
-  .col-xs-12.col-md-4
-    h3.lead
-      | Use this document as a way to quickly start any new project.
-      br
-      | All you get is this text and a mostly barebones HTML document.
-  .col-xs-12.col-md-4
-    h3.lead
-      | Proudly built with:
-    p
-      a(href='http://nodejs.org/') Node.js
-    p
-      a(href='http://gulpjs.com/') Gulp.js
-    p
-      a(href='http://browserify.org/') Browserify
-    p
-      a(href='http://getbootstrap.com/') Twitter Bootstrap
-    p
-      a(href='http://jade-lang.com/') Jade
-    p
-      a(href='http://lesscss.org/') Less
+  .row
+    #menu.hidden-xs.col-sm-3.bg-primary
+      ul.list-unstyled
+        li
+          a(href='#welcome') Welcome to Knottie
+          ul.list-unstyled
+            li
+              a(href="#welcome-get-started") Getting started
+        li
+          a(href='#parts') Pieces and parts
+          ul.list-unstyled
+            li
+              a(href="#parts-build") Build system
+              ul.list-unstyled
+                li
+                  a(href="#parts-build-lint") Linting
+                li
+                  a(href="#parts-build-test") Test
+                li
+                  a(href="#parts-build-coverage") Coverage
+                li
+                  a(href="#parts-build-clean") Clean
+            li
+              a(href="#parts-web") Single page application
+            li
+              a(href="#parts-server") RESTful server
+            li
+              a(href="#parts-common") Common module
+        li
+          a(href='#what') What's included?
+        li
+          a(href='#why') Why another framework
+      .pull-down
+        h2 Knottie
+        h4 The framework that isn't.
+
+    #docs.col-xs-12.col-sm-9
+      #xs-header.visible-xs.bg-primary
+        h2 Knottie
+        h4 The framework that isn't.
+
+      h3#welcome.page-header Welcome to Knottie
+      p.
+        Knottie is made for building single page applications that run in the
+        browser and/or a RESTful server to run behind it.
+
+      h4#welcome-get-started Getting started
+      p.
+        Let's get Knottie to display something via its web project. If you've
+        cloned the example site you simply cd into the knottie/web directory and
+        then:
+      pre.
+        npm install
+        gulp
+      p.
+        That's it. Your browser will open, pointed at the built site. Now you
+        just start editing the files and viola, the page will refresh in your
+        browser.
+
+      h3#parts Pieces and parts
+
+      h4#parts-build Build system
+      p.
+        Knottie provides the gulp build system with tasks that are common among
+        the three modules, except for key differences where they make sense.
+      dl.dl-horizontal
+        dt#parts-build-lint
+          code gulp lint
+        dd.
+          All three of Knottie's projects support the lint task. It will lint
+          both the <code>src/</code> and <code>test/</code> directories
+          (basically all of <em>your</em> code).
+
+        dt#parts-build-test
+          code gulp test
+        dd.
+          For the common and server projects this task will run Mocha, passing
+          in any file in the <code>test/</code> directory and its subdirectories
+          that end in "_spec.js" (<code>test/**/*_spec.js</code>). It limits
+          itself to only those files so that you can include non-test code files
+          and not have them executed as tests.
+
+        dt#parts-build-coverage
+          code gulp coverage
+        dd.
+          The common and server projects support the coverage task. For the
+          common and server projects this will instrument all of your files in
+          <code>src/</code>, execute the tests, and give a textual summary of
+          the test coverage. It will generate  lcov and html reports in the
+          <code>coverage/</code> directory.
+
+        dt#parts-build-clean
+          code gulp clean
+        dd.
+          All three of Knottie's projects support the clean task. Clean will
+          delete the <code>build/</code> and <code>coverage/</code> directories
+          from the project.
+
+      h4#parts-web Single page application
+      p.
+        Knottie is purpose-built to create Single Page Applications (SPAs).
+        Knottie is not generally well suited to building marketing sites or
+        similar concerns where only fractions of the markup is sent to any
+        unique visitor. Out of the box Knottie is good for applications where
+        there is a small to medium amount of markup that will be bound to data
+        that is retrieved from AJAX calls during user interaction. This could
+        include blogs or timeline based applications, but we primarily use it
+        for building applications we want to run in the browser.
+
+      h4#parts-server RESTful server
+      p.
+        Knottie's default server application is a simple RESTful server
+        implemented by <a href="http://mcavage.me/node-restify/">restify</a>. By
+        seperating  the server from the web application developers are
+        encouraged to have  better seperation of concerns. This will make for
+        better testing, more maintainable code, and makes writing clients for
+        other platforms like iOS or  Android easier.
+
+      h4#parts-common Common module
+      p.
+        Part of what makes developing full-stack Javascript so attractive is the
+        idea that you can use the same functions on the client and on the
+        server. Knottie helps you do this by including a module that both
+        projects can include in. When creating shared code is this frictionless
+        it's more likely to be done.
+
+      h3#what What 3rd party modules are included?
+      dl.dl-horizontal
+        dt Node.js&reg;
+        dd
+          a(href='http://nodejs.org/') http://nodejs.org/
+
+        dt gulp.js
+        dd
+          a(href='http://gulpjs.com/') http://gulpjs.com/
+
+        dt Mocha
+        dd
+          a(href='http://visionmedia.github.io/mocha/') http://visionmedia.github.io/mocha/
+
+        dt Chai
+        dd
+          a(href='http://chaijs.com/') http://chaijs.com/
+
+        dt Sinon.js
+        dd
+          a(href='http://sinonjs.org/') http://sinonjs.org/
+
+        dt Sinon-Chai
+        dd
+          a(href='https://github.com/domenic/sinon-chai') https://github.com/domenic/sinon-chai
+
+        dt SuperTest
+        dd
+          a(href='https://github.com/visionmedia/supertest') https://github.com/visionmedia/supertest
+
+        dt istanbul
+        dd
+          a(href='http://gotwarlost.github.io/istanbul/') http://gotwarlost.github.io/istanbul/
+
+        dt JSHint
+        dd
+          a(href='http://www.jshint.com/') http://www.jshint.com/
+
+        dt restify
+        dd
+          a(href='http://mcavage.me/node-restify/') http://mcavage.me/node-restify/
+
+        dt Browserify
+        dd
+          a(href='http://browserify.org/') http://browserify.org/
+
+        dt Bootstrap
+        dd
+          a(href='http://getbootstrap.com/') http://getbootstrap.com/
+
+        dt Font Awesome
+        dd
+          a(href='http://fortawesome.github.io/Font-Awesome/') http://fortawesome.github.io/Font-Awesome/
+
+        dt Jade
+        dd
+          a(href='http://jade-lang.com/') http://jade-lang.com/
+
+        dt Less
+        dd
+          a(href='http://lesscss.org/') http://lesscss.org/
+
+        dt Uglify
+        dd
+          a(href='https://github.com/mishoo/UglifyJS') https://github.com/mishoo/UglifyJS
+
+        dt jQuery
+        dd
+          a(href='http://jquery.com/') http://jquery.com/
+
+        dt &hellip;and more
+        dd.
+          There are simply more included parts than we can reasonably list here
+          and frankly you won't need to worry about most of them. If you really
+          want to know just open the package.json file from the root of each
+          project and check them out for yourself.
+
+      h3#why Why another framework (our&nbsp;minifesto)
+      p.
+        Frameworks are meant to help programmers get their idea into code as
+        quickly as possible by eliminating the boilerplate work. They work great
+        until they don't and then you're stuck writing plugins or modifying the
+        source of the project itself. Both of these solutions are difficult to
+        maintain as the source framework moves forward.
+      p.
+        Knottie is different because it prefers libraries to monolithic
+        frameworks. This means that you can pick and choose from best-of-breed
+        functionality wherever you see fit. Knottie makes some (very good, if we
+        do say so ourselves) assumptions about things you'll probably want to
+        use and creates a working site for you to begin building on.
+      p.
+        The real magic of Knottie is that it focuses on giving you the things
+        that make delivering quality software quick and easy. Out of the box
+        Knottie includes a full build system, testing, code coverage, linting,
+        and more. It will run your projects, restarting them as your code
+        changes. It will even build a minified version for production.
