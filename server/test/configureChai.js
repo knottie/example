@@ -5,16 +5,16 @@ var sinonChai = require("sinon-chai");
 chai.use(sinonChai);
 
 chai.use(function(chai, utils) {
-  var Assertion = chai.Assertion,
-      missing = [],
-      unexpected = [];
+  var Assertion = chai.Assertion;
+  var missing = [];
+  var unexpected = [];
 
   Assertion.addMethod('set', function(expected) {
-    var match = true,
-        actual = this._obj,
-        falsePositive = 'expected no missing or unexpected entries',
-        falseNegative = 'expected missing or unexpected entries',
-        message = '';
+    var match = true;
+    var actual = this._obj;
+    var falsePositive = 'expected no missing or unexpected entries';
+    var falseNegative = 'expected missing or unexpected entries';
+    var message = '';
 
     missing = _.difference(actual, expected);
     if (missing.length > 0) {

@@ -1,7 +1,7 @@
 'use strict';
 
-var expect = require('chai').expect,
-    configureChai = require('./configureChai');
+var expect = require('chai').expect;
+var configureChai = require('./configureChai');
 
 describe('Array', function() {
 

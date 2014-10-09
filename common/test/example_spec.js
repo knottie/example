@@ -1,8 +1,8 @@
 'use strict';
 
-var idx = require('../src/index'),
-    expect = require('chai').expect,
-    configureChai = require('./configureChai');
+var idx = require('../src/index');
+var expect = require('chai').expect;
+var configureChai = require('./configureChai');
 
 describe('Hello', function() {
 

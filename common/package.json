@@ -7,7 +7,7 @@
     "lodash": "^2.4.1"
   },
   "devDependencies": {
-    "chai": "^1.9.1",
+    "chai": "^1.9.2",
     "gulp": "^3.8.8",
     "gulp-istanbul": "^0.3.1",
     "gulp-jshint": "^1.8.4",
@@ -15,7 +15,9 @@
     "gulp-rimraf": "^0.1.0",
     "gulp-util": "^3.0.1",
     "minimist": "^1.1.0",
-    "pretty-hrtime": "^0.2.1"
+    "pretty-hrtime": "^0.2.1",
+    "sinon": "^1.10.3",
+    "sinon-chai": "^2.6.0"
   },
   "scripts": {
     "test": "gulp test"
