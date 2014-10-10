@@ -4,11 +4,11 @@ var less = require('gulp-less');
 var argv = require('minimist')(process.argv.slice(2));
 
 gulp.task('buildStyles', function() {
-    return gulp
-      .src('./src/less/index.less')
-      .pipe(less({
-        compress: argv.production
-      }))
-      .pipe(gulp.dest('./build/'))
-      .on('error', handleErrors);
+  return gulp
+    .src('./src/less/index.less')
+    .pipe(less({
+      compress: argv.production
+    }))
+    .on('error', handleErrors)
+    .pipe(gulp.dest('./build/'));
 });

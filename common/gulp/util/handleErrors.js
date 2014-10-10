@@ -5,7 +5,8 @@ module.exports = function() {
 
   notify.onError({
     title: 'Compile Error',
-    message: '<%= error.message %>'
+    message: '<%= error.message %>',
+    sound: 'Basso'
   }).apply(this, args);
 
   this.emit('end');
