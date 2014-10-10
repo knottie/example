@@ -12,10 +12,10 @@ gulp.task('default', function() {
     title: 'Knottie',
     message: 'Server started.'
   });
-  node.on('close', function(exit_code) {
+  node.on('close', function(exitCode) {
     // Exit code 8 is a compile error. Let's wait until they have their act
     // together and let them get back to work.
-    if (exit_code === 8) {
+    if (exitCode === 8) {
       notifier.notify({
         title: 'Knottie',
         message: 'Stopping for error. Waiting for changes to restart.',
