@@ -1,12 +1,14 @@
 'use strict';
 
+var greet = require('./greet').greet;
+
 var m = {};
 
 // Insert your code here.
 
 // This function is tested.
 m.sayHello = function sayHello(name) {
-  return 'Hello, ' + name;
+  return greet('Hello', name);
 };
 
 // This function is not tested, but ignored by Istanbul.
