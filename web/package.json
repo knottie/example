@@ -4,6 +4,7 @@
   "description": "Knottie example web client",
   "main": "src/javascript/index.js",
   "dependencies": {
+    "knockout": "^3.2.0",
     "lodash": "^2.4.1"
   },
   "devDependencies": {
