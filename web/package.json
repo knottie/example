@@ -5,6 +5,7 @@
   "main": "src/javascript/index.js",
   "dependencies": {
     "knockout": "^3.2.0",
+    "knottie-sammy": "^0.7.6",
     "lodash": "^2.4.1"
   },
   "devDependencies": {
