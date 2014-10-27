@@ -7,6 +7,7 @@ var handleErrors = require('../util/handleErrors');
 var source = require('vinyl-source-stream');
 var browserify = require('browserify');
 var watchify = require('watchify');
+var reactify = require('reactify');
 var argv = require('minimist')(process.argv.slice(2));
 
 gulp.task('buildScripts', function() {
@@ -21,8 +22,10 @@ gulp.task('buildScripts', function() {
     debug: !argv.production,
     cache: {},
     packageCache: {},
-    fullPaths: true
+    fullPaths: true,
   });
+
+  bundler.transform(reactify);
 
   var bundle = function bundle() {
     bundleLogger.start();
@@ -42,3 +45,22 @@ gulp.task('buildScripts', function() {
 
   return bundle();
 });
+
+/*
+
+  var props = {entries: [scriptsDir + '/' + file]};
+  var bundler = watch ? watchify(props) : browserify(props);
+  bundler.transform(reactify);
+  function rebundle() {
+    var stream = bundler.bundle({debug: true});
+    return stream.on('error', handleErrors)
+    .pipe(source(file))
+    .pipe(gulp.dest(buildDir + '/'));
+  }
+  bundler.on('update', function() {
+    rebundle();
+    gutil.log('Rebundle...');
+  });
+  return rebundle();
+
+*/
