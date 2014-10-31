@@ -1,11 +1,9 @@
 var gulp = require('gulp');
-var rimraf = require('gulp-rimraf');
+var del = require('del');
 
-gulp.task('clean', function() {
-  return gulp
-    .src([
+gulp.task('clean', function(cb) {
+  del([
       './build',
       './coverage'
-    ], {read: false})
-    .pipe(rimraf());
+    ], cb);
 });
