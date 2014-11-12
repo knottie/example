@@ -6,5 +6,5 @@ var server = require('./server');
 var routes = require('./routes');
 
 /* istanbul ignore next */
-server.listen(8080);
+server.listen(3001);
 console.log('Server listening.');
