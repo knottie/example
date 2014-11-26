@@ -2,7 +2,7 @@
 
 var os = require('os');
 
-var m = {};
+var m = module.exports = {};
 
 m.sayHello = function sayHello(req, res, next) {
   res.send(200, {hello: 'Bill'});
@@ -13,5 +13,3 @@ m.getArch = function getArch(req, res, next) {
   res.send(200, os.arch());
   return next();
 };
-
-module.exports = m;

@@ -2,7 +2,7 @@ var gutil = require('gulp-util');
 var prettyHrtime = require('pretty-hrtime');
 var startTime;
 
-var m = {};
+var m = module.exports = {};
 
 m.start = function start() {
   startTime = process.hrtime();
@@ -14,5 +14,3 @@ m.end = function end() {
       prettyTime = prettyHrtime(taskTime);
   gutil.log('Finished', gutil.colors.green("'bundle'"), 'in', gutil.colors.magenta(prettyTime));
 };
-
-module.exports = m;

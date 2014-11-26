@@ -1,6 +1,6 @@
 'use strict';
 
-var m = {};
+var m = module.exports = {};
 
 // Insert your code here.
 
@@ -31,5 +31,3 @@ m.notCovered = function notCovered(foo) {
 
   return false;
 };
-
-module.exports = m;
