@@ -8,6 +8,8 @@ m = module.exports = {};
 
 m.sum = (x, y) -> x + y
 
-m.viewModel = () -> @.kobound = ko.observable('Foo!!!')
+m.viewModel = () ->
+  @.kobound = ko.observable('Foo!!!')
+  undefined
 
 ko.applyBindings(m.viewModel);
