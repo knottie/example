@@ -8,13 +8,13 @@ map                 = require('map-stream')
 through2            = require('through2')
 watching            = false
 
-gulp.task 'lint', ['lintJS', 'lintCoffee'], ->
+gulp.task 'lint', ['lint:js', 'lint:coffee'], ->
   if argv.watch or argv.w and not watching
     watching = true
     console.log 'Watching...'
     gulp.watch(['src/**', 'test/**'], ['lint'])
 
-gulp.task 'lintJS', ->
+gulp.task 'lint:js', ->
   gulp
     .src([
       'src/**/*.js',
@@ -26,7 +26,7 @@ gulp.task 'lintJS', ->
     .pipe(new jsNotifyReporter)
     .pipe(jshint.reporter('fail'))
 
-gulp.task 'lintCoffee', ->
+gulp.task 'lint:coffee', ->
   gulp
     .src([
       'src/**/*.coffee',
