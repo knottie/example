@@ -1,6 +1,6 @@
-_              = require('lodash')
-chai           = require('chai')
+_    = require('lodash')
+chai = require('chai')
 
-global.expect       = chai.expect
+global.expect = chai.expect
 
 chai.use require('sinon-chai')

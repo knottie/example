@@ -3,7 +3,6 @@ jshint              = require('gulp-jshint')
 coffeelint          = require('gulp-coffeelint')
 {createPluginError} = require('../../node_modules/gulp-coffeelint/lib/utils')
 argv                = require('minimist')(process.argv.slice(2))
-notifier            = require('node-notifier')
 map                 = require('map-stream')
 through2            = require('through2')
 watching            = false
@@ -39,10 +38,6 @@ gulp.task 'lint:coffee', ->
 jsNotifyReporter = ->
   map((file, cb) ->
     if not file.jshint.success
-      notifier.notify
-        title: 'Provider Nexus API'
-        message: 'JS failed linting.'
-        sound: 'Basso'
 
     cb null, file
   )
@@ -55,9 +50,5 @@ coffeeNofifyReporter = ->
 
     @emit 'error',
       createPluginError "CoffeeLint failed for #{file.relative}"
-    notifier.notify
-      title: 'Provider Nexus API'
-      message: 'Coffee failed linting.'
-      sound: 'Basso'
 
     cb()

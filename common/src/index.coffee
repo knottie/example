@@ -5,15 +5,7 @@ m = module.exports = {}
 # This function is tested.
 m.sayHello = (name) -> return "Hello, #{name}"
 
-# This function is not tested, but ignored by Istanbul.
-###
-  istanbul ignore next
-###
+# This function is not tested.
 m.ignored = (foo) ->
-  return true if foo is true
-  return false
-
-# This function is untested.
-m.notCovered = (foo) ->
   return true if foo is true
   return false

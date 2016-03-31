@@ -1,4 +1,4 @@
-idx           = require('../src/index.coffee')
+idx = require('../src/index.coffee')
 
 describe 'Hello', () ->
 
